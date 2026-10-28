@@ -1,0 +1,13 @@
+{
+  "name": "mis-horas-extra",
+  "version": "1.0.0",
+  "private": true,
+  "description": "App para contar horas extra, fichar con foto del reloj y calcular ganancias",
+  "dependencies": {
+    "@capacitor/android": "6.1.2",
+    "@capacitor/core": "6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "6.1.2"
+  }
+}
