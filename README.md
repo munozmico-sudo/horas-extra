@@ -5,6 +5,7 @@ App para contar las horas extra del trabajo y lo que se gana con ellas.
 - **Fichar**: apunta la entrada y la salida a mano o con "Fichar ahora".
 - **Foto**: haz una foto al reloj y la app lee la hora de entrada o de salida.
 - **Resumen**: horas trabajadas, horas extra y ganancias de cada mes.
+- **PDF**: crea un PDF del mes con solo las horas extra o con el horario completo, para imprimir o compartir.
 - **Ajustes**: horario de cada día, precio de la hora extra, precio en día libre, descanso no pagado y copia de seguridad.
 
 Los datos se guardan en el propio teléfono. Usa la copia de seguridad de Ajustes para no perderlos.
