@@ -3,6 +3,8 @@
 App para contar las horas extra del trabajo y lo que se gana con ellas.
 
 - **Fichar**: apunta la entrada y la salida a mano o con "Fichar ahora".
+- **Varios fichajes al día** (interruptor en Fichar): botones de inicio y fin de jornada, inicio y final de almuerzo, inicio y final de café, y salidas y entradas sueltas. Contador en directo del tiempo de jornada (horas:minutos:segundos y en horas decimales). Las pausas se suman aparte y, si quieres, se restan del tiempo trabajado (Ajustes).
+- **Guardar automáticamente** (interruptor en Fichar): cada fichaje se guarda al momento; si lo desactivas, los cambios esperan a que pulses Guardar.
 - **Foto**: haz una foto al reloj y la app lee la hora de entrada o de salida.
 - **Resumen**: horas trabajadas, horas extra y ganancias de cada mes.
 - **PDF**: crea un PDF del mes con solo las horas extra o con el horario completo, para imprimir o compartir.
@@ -17,26 +19,17 @@ Los datos se guardan en el propio teléfono. Usa la copia de seguridad de Ajuste
 
 ## Subirla a GitHub
 
-1. Crea un repositorio nuevo en GitHub, por ejemplo `horas-extra`.
-2. Sube **todo** el contenido de esta carpeta, incluida la carpeta oculta `.github`.
-   Si la subes desde la web de GitHub ("Add file → Upload files"), arrastra la carpeta entera para que no se quede fuera `.github`.
-3. La rama debe llamarse `main`.
+1. Crea un repositorio nuevo, por ejemplo `horas-extra`, marcando **Add a README file**.
+2. **Add file → Create new file**, nombre `.github/workflows/android.yml`, pega el contenido de ese archivo y **Commit changes**.
+3. **Add file → Upload files**, arrastra `www`, `package.json`, `capacitor.config.json`, `README.md` y `.gitignore`, y **Commit changes**.
 
 ## Conseguir el APK para Android
 
-1. En el repositorio, entra en la pestaña **Actions**. El flujo **Compilar APK** arranca solo con cada subida y tarda unos 5 minutos.
-2. Cuando termine con la marca verde, ve a **Releases** (a la derecha en la portada del repositorio).
-3. Descarga `MisHorasExtra.apk` desde el móvil e instálalo. Android pedirá permitir la instalación de apps de origen desconocido.
+1. En la pestaña **Actions**, el flujo **Compilar APK** arranca solo con cada subida y tarda unos 5 minutos.
+2. Cuando salga en verde, ve a **Releases** y descarga `MisHorasExtra.apk` en el móvil.
+3. Instálalo. Android pedirá permitir apps de origen desconocido.
 
-Cada vez que subas un cambio se crea un APK nuevo. Al instalarlo encima se conservan los datos.
-
-## Usarla como web (opcional)
-
-1. En el repositorio: **Settings → Pages → Source: GitHub Actions**.
-2. Vuelve a lanzar el flujo **Publicar web** en Actions ("Run workflow").
-3. La app queda en `https://TU-USUARIO.github.io/horas-extra/` y se puede añadir a la pantalla de inicio.
-
-La web y el APK guardan los datos por separado. Para pasar los datos de una a otra, usa la copia de seguridad.
+Todas las versiones van firmadas con la misma llave (está dentro de `android.yml`), así que cada APK nuevo se instala encima sin perder los datos.
 
 ## Estructura
 
@@ -44,5 +37,5 @@ La web y el APK guardan los datos por separado. Para pasar los datos de una a ot
 www/                 la app (index.html, manifest, icono, service worker)
 capacitor.config.json  configuración para convertirla en app Android
 package.json           dependencias de Capacitor
-.github/workflows/     compilación del APK y publicación de la web
+.github/workflows/     compilación del APK
 ```
